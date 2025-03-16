@@ -9,5 +9,7 @@ export default yimo({}, {
         html: true,
       },
     ],
+    // next version remove
+    'stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-line' }],
   },
 })
