@@ -69,9 +69,6 @@ importers:
       jest:
         specifier: ^29.6.3
         version: 29.7.0(@types/node@22.13.10)
-      jiti:
-        specifier: ^2.4.2
-        version: 2.4.2
       react-test-renderer:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
@@ -6336,7 +6333,8 @@ snapshots:
 
   jiti@1.21.7: {}
 
-  jiti@2.4.2: {}
+  jiti@2.4.2:
+    optional: true
 
   joi@17.13.3:
     dependencies:
