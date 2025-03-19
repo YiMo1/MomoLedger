@@ -11,11 +11,6 @@
     "jsx": "react-native",
     "isolatedModules": true
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./App.tsx",
-    "./eslint.config.ts"
-  ],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./eslint.config.ts"],
   "exclude": ["node_modules"]
 }
