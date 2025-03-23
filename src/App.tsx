@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { NavigationBar } from './component/NavigationBar.tsx'
 
@@ -7,7 +7,7 @@ import './style/tailwind.css'
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+    <SafeAreaProvider>
       <NavigationBar/>
     </SafeAreaProvider>
   )
