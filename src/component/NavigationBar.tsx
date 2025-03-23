@@ -9,7 +9,7 @@ import Chart from '../assets/icon/饼图.svg'
 import Gear from '../assets/icon/齿轮.svg'
 import { PRIMARY } from '../style/color.ts'
 
-export function NavigationBar({ height }: { height: number }): React.JSX.Element {
+export function NavigationBar(): React.JSX.Element {
   const icons = [Home, Wallet, Calendar, Chart, Gear]
   const insets = useSafeAreaInsets()
   const [activeItem, setActiveItem] = useState(0)
@@ -20,7 +20,7 @@ export function NavigationBar({ height }: { height: number }): React.JSX.Element
   }
 
   return (
-    <View style={[style.container, { paddingBottom: insets.bottom, height }]}>
+    <View style={[style.container, { paddingBottom: insets.bottom }]}>
       {icons.map((Icon, index) => <Pressable style={style.barItem} onPress={() => {
         onClickItem(index)
       }}>
@@ -40,6 +40,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     boxShadow: '0 0 4 0 #9999',
+    height: 80,
   },
   barItem: {
     flexGrow: 1,

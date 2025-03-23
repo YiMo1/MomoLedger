@@ -6,11 +6,9 @@ import { NavigationBar } from './component/NavigationBar.tsx'
 import './style/tailwind.css'
 
 function App(): React.JSX.Element {
-  const navbarHeight = 80
-
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <NavigationBar height={navbarHeight} />
+      <NavigationBar/>
     </SafeAreaProvider>
   )
 }
