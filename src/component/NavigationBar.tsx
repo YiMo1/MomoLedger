@@ -21,7 +21,7 @@ export function NavigationBar(): React.JSX.Element {
 
   return (
     <View style={[style.container, { paddingBottom: insets.bottom }]}>
-      {icons.map((Icon, index) => <Pressable style={style.barItem} onPress={() => {
+      {icons.map((Icon, index) => <Pressable style={style.barItem} key={index} onPress={() => {
         onClickItem(index)
       }}>
         <Icon width={30} height={'100%'} fill={index === activeItem ? PRIMARY : '#999999'} />
@@ -36,7 +36,6 @@ const style = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    display: 'flex',
     flexDirection: 'row',
     backgroundColor: '#fff',
     boxShadow: '0 0 4 0 #9999',
@@ -45,7 +44,6 @@ const style = StyleSheet.create({
   barItem: {
     flexGrow: 1,
     height: '100%',
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
