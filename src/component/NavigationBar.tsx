@@ -1,4 +1,4 @@
-import { Pressable, type PressableProps, StyleSheet, View } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import React, { useState } from 'react'
 
@@ -8,8 +8,6 @@ import Wallet from '../assets/icon/钱包.svg'
 import Chart from '../assets/icon/饼图.svg'
 import Gear from '../assets/icon/齿轮.svg'
 import { PRIMARY } from '../style/color.ts'
-
-import type { SvgProps } from 'react-native-svg'
 
 export function NavigationBar({ height }: { height: number }): React.JSX.Element {
   const icons = [Home, Wallet, Calendar, Chart, Gear]
@@ -23,28 +21,12 @@ export function NavigationBar({ height }: { height: number }): React.JSX.Element
 
   return (
     <View style={[style.container, { paddingBottom: insets.bottom, height }]}>
-      { icons.map((icon, index) => <NatigationBarItem
-        key={index} icon={icon} active={index === activeItem} onPress={() => {
-          onClickItem(index)
-        }} />) }
+      {icons.map((Icon, index) => <Pressable style={style.barItem} onPress={() => {
+        onClickItem(index)
+      }}>
+        <Icon width={30} height={'100%'} fill={index === activeItem ? PRIMARY : '#999999'} />
+      </Pressable>)}
     </View>
-  )
-}
-
-type NatigationBarItemProps = {
-  icon: React.FC<SvgProps>
-  active: boolean
-} & PressableProps
-
-function NatigationBarItem({
-  icon: Icon,
-  active,
-  ...rest
-}: NatigationBarItemProps): React.JSX.Element {
-  return (
-    <Pressable style={style.barItem} {...rest}>
-      <Icon width={30} height={100} fill={active ? PRIMARY : '#999999'} />
-    </Pressable>
   )
 }
 
