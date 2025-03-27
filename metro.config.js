@@ -15,5 +15,5 @@ const config = {
 
 module.exports = withNativeWind(
   mergeConfig(defaultConfig, config),
-  { input: './src/style/tailwind.css', disableTypeScriptGeneration: true },
+  { input: './src/style/tailwind.css', disableTypeScriptGeneration: true, inlineRem: 16 },
 )

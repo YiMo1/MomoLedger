@@ -1,17 +1,19 @@
-import { Pressable, StyleSheet, View } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Pressable, View } from 'react-native'
 import React, { useState } from 'react'
+import { cssInterop } from 'nativewind'
 
 import Home from '../assets/icon/家.svg'
 import Calendar from '../assets/icon/日历.svg'
 import Wallet from '../assets/icon/钱包.svg'
 import Chart from '../assets/icon/饼图.svg'
 import Gear from '../assets/icon/齿轮.svg'
-import { PRIMARY } from '../style/color.ts'
 
 export function NavigationBar(): React.JSX.Element {
-  const icons = [Home, Wallet, Calendar, Chart, Gear]
-  const insets = useSafeAreaInsets()
+  const icons = [Home, Wallet, Calendar, Chart, Gear].map((item) => cssInterop(
+    item,
+    { className: { target: 'style' } },
+  ))
+
   const [activeItem, setActiveItem] = useState(0)
 
   function onClickItem(index: number) {
@@ -20,31 +22,18 @@ export function NavigationBar(): React.JSX.Element {
   }
 
   return (
-    <View style={[style.container, { paddingBottom: insets.bottom }]}>
-      {icons.map((Icon, index) => <Pressable style={style.barItem} key={index} onPress={() => {
-        onClickItem(index)
-      }}>
-        <Icon width={30} height={'100%'} fill={index === activeItem ? PRIMARY : '#999999'} />
-      </Pressable>)}
+    <View className='pb-safe h-20 flex-row bg-white' style={{ boxShadow: '0 0 4 #9996' }}>
+      {icons.map((Icon, index) => (
+        <Pressable
+          className='h-full flex-1 items-center justify-center'
+          key={index}
+          onPress={() => { onClickItem(index) } }>
+          <Icon
+            className={index === activeItem ? `fill-primary` : 'fill-gray-400'}
+            height='100%'
+            width={30}/>
+        </Pressable>))
+      }
     </View>
   )
 }
-
-const style = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    flexDirection: 'row',
-    backgroundColor: '#fff',
-    boxShadow: '0 0 4 0 #9999',
-    height: 80,
-  },
-  barItem: {
-    flexGrow: 1,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
