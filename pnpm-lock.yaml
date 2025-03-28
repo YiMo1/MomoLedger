@@ -79,8 +79,8 @@ importers:
         specifier: ^9.22.0
         version: 9.22.0(jiti@2.4.2)
       eslint-config-yimo:
-        specifier: ^1.1.2
-        version: 1.1.2(eslint@9.22.0(jiti@2.4.2))(tailwindcss@3.4.17)(typescript@5.0.4)
+        specifier: ^1.2.0
+        version: 1.2.0(eslint@9.22.0(jiti@2.4.2))(tailwindcss@3.4.17)(typescript@5.0.4)
       hermes-eslint:
         specifier: ^0.26.0
         version: 0.26.0
@@ -1912,8 +1912,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-yimo@1.1.2:
-    resolution: {integrity: sha512-0e9MO20lYXj+enDZ1Iz1XdH5IxD2i4wiLLaIOCFPbEILHMK/k3TesSYvCXZNFB3WMu31A+EZi+lvAtJaBoVyww==}
+  eslint-config-yimo@1.2.0:
+    resolution: {integrity: sha512-liNF7OyqweyMXs+YG3hF27oUdSvEKJOfJ52k3r8hYUUgTtcjL9AZ3zr8+qL2sWE4GVMLuscT9LZwgrGtJcSTHA==}
     engines: {node: ^20.18.0}
 
   eslint-import-resolver-node@0.3.9:
@@ -6140,7 +6140,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-yimo@1.1.2(eslint@9.22.0(jiti@2.4.2))(tailwindcss@3.4.17)(typescript@5.0.4):
+  eslint-config-yimo@1.2.0(eslint@9.22.0(jiti@2.4.2))(tailwindcss@3.4.17)(typescript@5.0.4):
     dependencies:
       '@stylistic/eslint-plugin': 4.2.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.0.4)
       eslint-plugin-import-x: 4.6.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.0.4)
