@@ -1,4 +1,6 @@
 {
   "name": "MomoLedger",
-  "displayName": "MomoLedger"
+  "displayName": "MomoLedger",
+  "version": "0.1.0",
+  "versionCode": 1
 }
